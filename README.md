@@ -72,16 +72,3 @@ Este sistema permite gerenciar despesas, incluindo a criação, listagem e pagam
   - `registrar()`: Registra um pagamento.
   - `listarPagamentos()`: Lista todos os pagamentos.
 
-## Instruções de Uso
-1. Clone o repositório.
-2. Configure seu ambiente PHP para executar arquivos `.php`.
-3. Abra o `index.php` no navegador para acessar o sistema.
-
-## Documentação das Classes
-A documentação detalhada de cada classe, incluindo exemplos de uso, será fornecida em arquivos separados na pasta `docs/`. 
-
-## Contribuição
-Sinta-se à vontade para contribuir com melhorias ou reportar problemas.
-
-## Licença
-Este projeto está sob a licença MIT.
