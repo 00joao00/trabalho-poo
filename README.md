@@ -1,74 +1,67 @@
 # Sistema de Gestão de Despesas
 
-## Descrição do Sistema
-Este sistema permite gerenciar despesas, incluindo a criação, listagem e pagamento de despesas. Ele é construído utilizando PHP e adota os princípios de Programação Orientada a Objetos (POO) para abstrair as regras de negócio.
+## Descrição
+Este sistema ajuda a gerenciar suas finanças. Você pode registrar e acompanhar despesas, organizar pagamentos e categorias de gastos. Foi feito em PHP, usando Programação Orientada a Objetos (POO) para manter o código organizado.
+
+
 
 ## Estrutura de Arquivos
+A estrutura do projeto é organizada da seguinte forma:
 
 /projeto
 │
-├── README.md
-├── src
-│   ├── Usuario.php
-│   ├── Despesa.php
-│   ├── TipoDespesa.php
-│   └── Pagamento.php
+├── README.md                     # Documentação geral do sistema
+├── index.php                     # Tela inicial do sistema
+├── listar_despesas_abertas.php   # Página para listar despesas em aberto
+├── listar_despesas_pagas.php     # Página para listar despesas que já foram pagas
+├── entrar_despesa.php            # Página para registrar novas despesas
+├── anotar_pagamento.php          # Página para anotar pagamentos realizados
+├── gerenciar_tipos_despesa.php    # Página para gerenciar categorias de despesas
+├── gerenciar_usuarios.php         # Página para gerenciar usuários do sistema
 ├── data
-│   ├── despesas.txt
-│   ├── despesas_pagas.txt
-│   └── tipos_despesas.txt
-└── index.php
-
-## Arquivos de Dados
-- `despesas.txt`: Armazena as despesas abertas.
-- `despesas_pagas.txt`: Armazena as despesas que foram pagas.
-- `tipos_despesas.txt`: Armazena os tipos de despesas.
+│   ├── despesas.txt              # Arquivo que armazena as despesas abertas
+│   ├── despesas_pagas.txt        # Arquivo que armazena as despesas pagas
+│   └── tipos_despesas.txt        # Arquivo que armazena os tipos de despesas
+└── src
+    ├── Usuario.php               # Classe para manipulação de usuários
+    ├── Despesa.php               # Classe para manipulação de despesas
+    ├── TipoDespesa.php           # Classe para manipulação de tipos de despesas
+    └── Pagamento.php              # Classe para manipulação de pagamentos
 
 ## Classes e Funcionalidades
 
-### 1. Classe `Usuario`
-- **Atributos**:
-  - `id`: Identificador do usuário.
+### Classe Usuario
+- **Atributos:**
+  - `id`: Identificador único do usuário.
   - `usuario`: Nome de usuário.
-  - `senha`: Senha do usuário.
+  - `senha`: Senha do usuário (armazenada de forma segura).
   
-- **Métodos**:
-  - `cadastrar()`: Cadastra um novo usuário.
-  - `atualizar()`: Atualiza os dados do usuário.
-  - `excluir()`: Exclui um usuário.
+- **Métodos:**
+  - `cadastrar()`: Método para cadastrar um novo usuário.
+  - `atualizar()`: Método para atualizar as informações do usuário.
+  - `excluir()`: Método para excluir um usuário do sistema.
 
-### 2. Classe `Despesa`
-- **Atributos**:
-  - `id`: Identificador da despesa.
+### Classe Despesa
+- **Atributos:**
+  - `id`: Identificador único da despesa.
   - `descricao`: Descrição da despesa.
   - `valor`: Valor da despesa.
-  - `data`: Data de vencimento.
+  - `data`: Data de vencimento da despesa.
   - `categoria`: Categoria da despesa.
-  - `status`: Status da despesa (aberta/paga).
+  - `status`: Status da despesa (aberta ou paga).
   
-- **Métodos**:
-  - `cadastrar()`: Cadastra uma nova despesa.
-  - `pagar()`: Marca a despesa como paga.
-  - `listar()`: Lista todas as despesas.
+- **Métodos:**
+  - `cadastrar()`: Método para registrar uma nova despesa.
+  - `pagar()`: Método para marcar uma despesa como paga.
+  - `listar()`: Método para listar todas as despesas.
 
-### 3. Classe `TipoDespesa`
-- **Atributos**:
-  - `id`: Identificador do tipo de despesa.
+### Classe TipoDespesa
+- **Atributos:**
+  - `id`: Identificador único do tipo de despesa.
   - `descricao`: Descrição do tipo de despesa.
   
-- **Métodos**:
-  - `cadastrar()`: Cadastra um novo tipo de despesa.
-  - `atualizar()`: Atualiza um tipo de despesa.
-  - `excluir()`: Exclui um tipo de despesa.
-
-### 4. Classe `Pagamento`
-- **Atributos**:
-  - `id`: Identificador do pagamento.
-  - `despesa_id`: Identificador da despesa paga.
-  - `data_pagamento`: Data em que o pagamento foi feito.
-  - `valor`: Valor do pagamento.
-  
-- **Métodos**:
-  - `registrar()`: Registra um pagamento.
-  - `listarPagamentos()`: Lista todos os pagamentos.
+- **Métodos:**
+  - `cadastrar()`: Método para cadastrar um novo tipo de despesa.
+  - `listar()`: Método para listar todos os tipos de despesas.
+  - `excluir()`: Método para excluir um tipo de despesa.
 
